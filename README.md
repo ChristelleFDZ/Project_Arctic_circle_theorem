@@ -21,10 +21,10 @@ We are going to tile our Aztec diamond using dominoes. The rules of the paving a
 There are a very large number of possible ways to place them. Indeed, for an Aztec Diamond of order n, there are  2^n(n+1)/2 several tilings.
 
 To represent different pavings, we will use a color convention that allows to distingue 4 possibilities of placement for a domino. 
-A horizontal domino with a white square on the right is represented by a clear blue domino.
-A horizontal domino with a white square on the left is represented by a green domino.
-A vertical domino with a white square at the bottom is represented by a yellow domino.
-A vertical domino with a black square at the bottom is represented by a red domino.
+- A horizontal domino with a white square on the right is represented by a clear blue domino.
+- A horizontal domino with a white square on the left is represented by a green domino.
+- A vertical domino with a white square at the bottom is represented by a yellow domino.
+- A vertical domino with a black square at the bottom is represented by a red domino.
 
 
 (cf test2.png)
