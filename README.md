@@ -30,40 +30,42 @@ To represent different pavings, we will use a color convention that allows to di
 (cf test2.png)
 
 
-Nous pouvons nosu demander si a grand echelle il existe un arrangement typique de pavages ?
+Does it exist a typical arrangement of tilings on a large scale ?
 
 #### <font color="blue">Le phénomène du cercle arctique </font>
 
+If we randomly choose one of the possible tilings of a large enough size of the Aztec diamond, we will see (with a probability close to 1) the formation of a circle in the center of the diamond. "This circle is called the 'arctic circle'. Indeed, this circle is made up of dominoes of different colors which are positioned out of order.
+On the other hand, outside the 'arctic circle', the regularly tailed regions in the corners are called 'frozen regions'. In fact in each corner, the dominoes have the same direction.
+This is the phenomenon of the arctic circle.
+This Theorem says that if we push all off it in infinity, we get a picture with a perfect circle in a perfect diamond.
 
-Si l'on tire au hasard un des pavages possibles d'un diamand asteque de taille assez grande, nous verrons (avec probablilité proche de 1) le cercle arctique.
-Al'interieur de cercle, le positionnmenent des dominos est totalement en désordre.
-A contrario, à l'exterieur du cercle inscrit, dans chaque coin du carré, les dominos sont gelées ; ils sont exactement dans le meme sens.
-C'est le phénomene du cercle arctique.
 
-image3
+image3  #2 images?
 
-Attention, le phenomnene du cercle arctique est propre au diamond azteque; un pavage typique du carré ne contient aucun zone gélées, et la disposition des dominos est totalement aléatoire.
+Warning: the phenomenon of the arctic circle is specific to diamond azteque; a typical tiling of the square does not contain any frozen areas, and the arrangement of the dominoes is totally random.
+
 
 image 4
 #### <font color="blue">Résulats attendus</font>
 
-Pour notre projet, nous souhaitons representer le phenomene arctique sous forme d'animation.
-Le but est de relaté les informations precedentes de facon simple et ludique à la porté de tous.
-Pour cela nous aurons en :
-1er partie 
+For our project, we want to represent the arctic phenomenon in the form of animation(widget or gif).
+The goal is to relate the previous information in a simple and fun way accessible to all.
+For this we will have in :
 
-2eme partie 
+- Part 1 
 
-3e partie 
+- Part 2
 
-4eme partie
+- Part 3
+
+- Part 4
 
 
 #### <font color="blue">Repartition des taches</font>
 
-Il a été difficile de trouver une repartition equivalente des taches. Les resultats etant tres liés nous avons choisis de travailler de la facon suivante :
+It was difficult to find an equivalent distribution of tasks becausethe different parts are closely linked, we have chosen to work as follows:
 
-( a faire ensemble)
+( To do together)
 
 
 
