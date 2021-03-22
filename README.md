@@ -1,32 +1,31 @@
 # Project_Arctic_circle_theorem-
 Project for HMMA238
-#### <font color="blue">Diamand asteque </font>
+#### <font color="blue">Aztec Diamond </font>
 
+In combinatorial mathematics, Aztec diamond of order n, is the set of all squares of square network whose centers (x,y) satisfy | x | + | y | ≤ n. 
 
-En mathématiques combinatoires , un diamant aztèque d'ordre n, est l'ensemnble de tous les carrés d'un réseau carré dont les centres ( x , y ) satisfont | x | + | y | ≤ n . 
+We will work with the squares of coloured diamond in chessboard.
 
-Nous travaillerons avec les cases du diamant  colorié en échiquier.
-
-Voici un exemple de diamand asteque d'ordre 1, 2, 3 et 6
+Here an example of Aztec diamond of order 1, 2, 3 and 6.
 
 (test.png) a faire
  (commentaire graphique)
 
-#### <font color="blue">Pavage aléatoire </font>
+#### <font color="blue">Random paving </font>
 
-A present, nous nous interessons au pavage de cette figure.
-Nous allons pavé notre diamand asteque à l'aide de dominos
-Les regles de pavages  sont les suivantes ; il faut que nos dominos remplissent entierement notre la figure sans se chevaucher et sans y en sortir.
-Il existe  un très grand nombres facons possibles de les placer. En effet, pour un diamand asteque d'ordre n, il existe 2^n(n+1)/2 pavages differents.
+Now, we are interested in paving this figure.
+We are going to tile our Aztec diamond using dominoes. The rules of the paving are as follows:
+- firstly, our dominoes have to completely fill our figure,
+- secondly, they must not overlap 
+- and finally, don't come out of the figure.
+There are a very large number of possible ways to place them. Indeed, for an Aztec Diamond of order n, there are 2^n(n+1)/2 several paving.
+
+To represent different paving, we will use a color convention that allow to distingue 4 possibilities of placement for a domino. 
+The clear blue dominoes is for the vertical domino with a white square on the right.
+The bue dominoes is for the vertical domino with a white square on the left.
+The red dominoes is for the vertical domino with a black square at the top.
+The yellow dominoes is for the vertical domino with a white square at the bottom.??
  
-Pour representer les differents pavages nous utiliserons une convention de couleur qui permet de distinger 4 types possibles de placement d'un dominos.
-Les dominos bleus claires : Dominos verticale ayant une case blanche a droite 
-Les dominos bleus : Dominos verticale ayant une case blanche gauche
-Les dominos rouges : dominos verticales ayant une case noir
-en haut
-
-Les dominos rouges : dominos verticales ayant une case noir
-en bas 
 
 (cf test2.png)
 
