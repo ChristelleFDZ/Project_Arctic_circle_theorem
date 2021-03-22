@@ -1,6 +1,8 @@
 # Project_Arctic_circle_theorem-
-Project for HMMA238
+Project for HMMA238.
+
 Made by Djouahra Sonia, Es-Sbai Omar, Sow Oumouratou Anna and Fernandez Christelle.
+
 #### <font color="blue">Aztec Diamond </font>
 
 In combinatorial mathematics, Aztec diamond of order n, is the set of all squares of square network whose centers (x,y) satisfy | x | + | y | ≤ n. 
@@ -62,7 +64,7 @@ For this we will have in :
 - Part 4
 
 
-#### <font color="blue">Work Organisation</font>
+#### <font color="blue">Work Organization</font>
 
 It was difficult to find an equivalent distribution of tasks because different parts are closely linked, we have chosen to work as follows:
 
