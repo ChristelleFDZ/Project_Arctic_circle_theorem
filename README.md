@@ -18,9 +18,9 @@ We are going to tile our Aztec diamond using dominoes. The rules of the paving a
 - firstly, our dominoes have to completely fill our figure,
 - secondly, they must not overlap 
 - and finally, don't come out of the figure.
-There are a very large number of possible ways to place them. Indeed, for an Aztec Diamond of order n, there are 2^n(n+1)/2 several tilings.
+There are a very large number of possible ways to place them. Indeed, for an Aztec Diamond of order n, there are  2^n(n+1)/2 several tilings.
 
-To represent different paving, we will use a color convention that allows to distingue 4 possibilities of placement for a domino. 
+To represent different pavings, we will use a color convention that allows to distingue 4 possibilities of placement for a domino. 
 A horizontal domino with a white square on the right is represented by a clear blue domino.
 A horizontal domino with a white square on the left is represented by a green domino.
 A vertical domino with a white square at the bottom is represented by a yellow domino.
