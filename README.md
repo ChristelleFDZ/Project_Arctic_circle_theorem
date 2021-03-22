@@ -4,9 +4,9 @@ Project for HMMA238
 
 In combinatorial mathematics, Aztec diamond of order n, is the set of all squares of square network whose centers (x,y) satisfy | x | + | y | ≤ n. 
 
-We will work with the squares of coloured diamond in chessboard.
+We will work with the squares of colored diamond in chessboard.
 
-Here an example of Aztec diamond of order 1, 2, 3 and 6.
+Here is an example of Aztec diamond of order 1, 2, 3 and 6.
 
 (test.png) a faire
  (commentaire graphique)
@@ -18,14 +18,14 @@ We are going to tile our Aztec diamond using dominoes. The rules of the paving a
 - firstly, our dominoes have to completely fill our figure,
 - secondly, they must not overlap 
 - and finally, don't come out of the figure.
-There are a very large number of possible ways to place them. Indeed, for an Aztec Diamond of order n, there are 2^n(n+1)/2 several paving.
+There are a very large number of possible ways to place them. Indeed, for an Aztec Diamond of order n, there are 2^n(n+1)/2 several tilings.
 
-To represent different paving, we will use a color convention that allow to distingue 4 possibilities of placement for a domino. 
-The clear blue dominoes is for the vertical domino with a white square on the right.
-The bue dominoes is for the vertical domino with a white square on the left.
-The red dominoes is for the vertical domino with a black square at the top.
-The yellow dominoes is for the vertical domino with a white square at the bottom.??
- 
+To represent different paving, we will use a color convention that allows to distingue 4 possibilities of placement for a domino. 
+A horizontal domino with a white square on the right is represented by a clear blue domino.
+A horizontal domino with a white square on the left is represented by a green domino.
+A vertical domino with a white square at the bottom is represented by a yellow domino.
+A vertical domino with a black square at the bottom is represented by a red domino.
+
 
 (cf test2.png)
 
