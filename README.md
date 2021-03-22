@@ -1,5 +1,6 @@
 # Project_Arctic_circle_theorem-
 Project for HMMA238
+Made by Djouahra Sonia, Es-Sbai Omar, Sow Oumouratou Anna and Fernandez Christelle.
 #### <font color="blue">Aztec Diamond </font>
 
 In combinatorial mathematics, Aztec diamond of order n, is the set of all squares of square network whose centers (x,y) satisfy | x | + | y | ≤ n. 
@@ -42,13 +43,13 @@ This Theorem says that if we push all off it in infinity, we get a picture with 
 
 image3  #2 images?
 
-Warning: the phenomenon of the arctic circle is specific to diamond azteque; a typical tiling of the square does not contain any frozen areas, and the arrangement of the dominoes is totally random.
+Warning: the phenomenon of arctic circle is specific to diamond aztec; a typical tiling of the square does not contain any frozen areas, and the arrangement of dominoes is totally random.
 
 
 image 4
 #### <font color="blue">Goals</font>
 
-For our project, we want to represent the arctic phenomenon in the form of animation(widget or gif).
+For our project, we want to represent arctic phenomenon in form of animation(widget or gif).
 The goal is to relate the previous information in a simple and fun way accessible to all.
 For this we will have in :
 
@@ -63,7 +64,7 @@ For this we will have in :
 
 #### <font color="blue">Work Organisation</font>
 
-It was difficult to find an equivalent distribution of tasks becausethe different parts are closely linked, we have chosen to work as follows:
+It was difficult to find an equivalent distribution of tasks because different parts are closely linked, we have chosen to work as follows:
 
 ( To do together)
 
