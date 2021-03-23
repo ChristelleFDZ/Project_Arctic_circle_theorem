@@ -4,7 +4,8 @@ Project for HMMA238.
 Made by Djouahra Sonia, Es-Sbai Omar, Sow Oumouratou Anna and Fernandez Christelle.
 
 -------------------------------
-#####<font color="purple">Aztec Diamond </font>
+
+##### <font color="purple">Aztec Diamond </font>
 ------------------------------------
 
 In combinatorial mathematics, Aztec diamond of order n, is the set of all squares of square network whose centers (x,y) satisfy | x | + | y | ≤ n. 
