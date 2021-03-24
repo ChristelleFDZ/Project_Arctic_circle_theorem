@@ -39,8 +39,7 @@ To represent different pavings, we will use a color convention that allows to di
 - A vertical domino with a white square at the bottom is represented by a yellow domino.
 - A vertical domino with a black square at the bottom is represented by a red domino.
 
-Ci-dessous les 8 possibilités de pavages d'un diamand azteque de taille 2.
-
+Below are 8 possibilities of paving an Aztec diamond of size 2:
 <p align="center">
   <img src="https://user-images.githubusercontent.com/78490299/112157958-00619200-8be8-11eb-8330-ca0a3d207fee.png" alt="Sublime's custom image"/>
 </p>
