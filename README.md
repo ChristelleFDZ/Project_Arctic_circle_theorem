@@ -12,10 +12,10 @@ Made by :
 ## <font color="purple">Aztec Diamond </font>
 ------------------------------------
 
-In combinatorial mathematics, Aztec diamond of order $n$, is the set of all squares of square network whose centers $(x,y)$ satisfy ![formula](https://render.githubusercontent.com/render/math?math=|%20x%20|%20%2B%20|%20y%20|%20≤%20n.) .
+In combinatorial mathematics, Aztec diamond of order n, is the set of all squares of square network whose centers (x,y) satisfy ![formula](https://render.githubusercontent.com/render/math?math=|%20x%20|%20%2B%20|%20y%20|%20≤%20n.) .
 We will work with the squares of colored diamond in chessboard.
 
-*Here is an example of Aztec diamond of order $1$, $2$, $3$ and $6$.*
+*Here is an example of Aztec diamond of order 1, 2, 3 and 6.*
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/78490299/112157586-a5c83600-8be7-11eb-888d-f195621129ff.png" alt="Sublime's custom image"/>
@@ -34,7 +34,7 @@ We are going to tile our Aztec diamond using dominoes. The rules of the paving a
 - firstly, our dominoes have to completely fill our figure,
 - secondly, they must not overlap 
 - and finally, don't come out of the figure.
-There are a very large number of possible ways to place them. Indeed, for an Aztec Diamond of order $n$, there are  $2^{n(n+1)/2}$ several tilings.
+There are a very large number of possible ways to place them. Indeed, for an Aztec Diamond of order n, there are ![formula](https://render.githubusercontent.com/render/math?math=2^{n(n%2B1)/2}) several tilings.
 
 To represent different pavings, we will use a color convention that allows to distingue 4 possibilities of placement for a domino. 
 - A horizontal domino with a white square on the right is represented by a clear blue domino.
@@ -42,7 +42,7 @@ To represent different pavings, we will use a color convention that allows to di
 - A vertical domino with a white square at the bottom is represented by a yellow domino.
 - A vertical domino with a black square at the bottom is represented by a red domino.
 
-*Below are $8$ possibilities of paving an Aztec diamond of size $2$:*
+*Below are 8 possibilities of paving an Aztec diamond of size 2:*
 <p align="center">
   <img src="https://user-images.githubusercontent.com/78490299/112157958-00619200-8be8-11eb-8330-ca0a3d207fee.png" alt="Sublime's custom image"/>
 </p>
@@ -59,7 +59,7 @@ __Does it exist a typical arrangement of tilings on a large scale ?__
 ----------------------------------
 
 
-If we randomly choose one of the possible tilings of a large enough size of the Aztec diamond, we will see (with a probability close to $1$ ) the formation of a circle in the center of the diamond. "This circle is called the **'arctic circle'**. Indeed, this circle is made up of dominoes of different colors which are positioned out of order.
+If we randomly choose one of the possible tilings of a large enough size of the Aztec diamond, we will see (with a probability close to 1 ) the formation of a circle in the center of the diamond. "This circle is called the **'arctic circle'**. Indeed, this circle is made up of dominoes of different colors which are positioned out of order.
 
 On the other hand, outside the 'arctic circle', regularly tailed regions in the corners are called 'frozen regions'. In fact in each corner, the dominoes have same direction.
 
@@ -93,7 +93,7 @@ The goal is to relate the previous information in a simple and fun way accessibl
 For this we will have in :
 
 ### Part 1 : Coding
-* **Figure:** creation of the figure in function of the size $n$ and colors in function of the paving.
+* **Figure:** creation of the figure in function of the size n and colors in function of the paving.
 * **Visualization** (widget or gif of the figure with playful animation)
 
 ### Part 2 : Documentation
