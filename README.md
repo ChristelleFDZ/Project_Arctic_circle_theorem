@@ -90,6 +90,8 @@ This Theorem says that if we push all off it in infinity, we get a picture with 
 For our project, we want to represent arctic phenomenon in form of animation(widget or gif).
 The goal is to relate the previous information in a simple and fun way accessible to all.
 
+First of all we will create the repository and branches.
+
 For this we will have in :
 
 ### Part 1 : Coding
@@ -103,9 +105,14 @@ For this we will have in :
 
 ### Part 3 : Last point 
 * Finalization of the page *Githup*
+* Beamer 
+
 
 It was difficult to find an equivalent distribution of tasks because different parts are closely linked, we have chosen to work as follows:
 
+* Sonia and Anna take care of the code 
+
+* Christelle and Omar will be interested in visualization
 
 | Omar | Anna | Christelle | Sonia |
 |--:|---------|:--:|:----|
