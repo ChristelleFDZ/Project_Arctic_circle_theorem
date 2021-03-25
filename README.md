@@ -12,7 +12,7 @@ Made by :
 ## <font color="purple">Aztec Diamond </font>
 ------------------------------------
 
-In combinatorial mathematics, Aztec diamond of order $n$, is the set of all squares of square network whose centers $(x,y)$ satisfy $| x | + | y | ≤ n.$ 
+In combinatorial mathematics, Aztec diamond of order $n$, is the set of all squares of square network whose centers $(x,y)$ satisfy $$| x | + | y | ≤ n.$$
 
 We will work with the squares of colored diamond in chessboard.
 
