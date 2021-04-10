@@ -29,3 +29,12 @@ PAVAGE_Etape_conflits = {
     O: E ; 
 
 }
+
+
+class Domino:
+    def __init__(self, angle_droit_h, orientation, order=None):
+        assert orientation in ORIENTATIONS
+        self.angle_droit_h = np.array(angle_droit_h)
+        self.orientation = orientation
+        self.rect = None
+        
