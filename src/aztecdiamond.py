@@ -55,3 +55,32 @@ class aztecdiamond:
             np.concatenate([tri, np.fliplr(tri)], axis=1)
         ], axis=0)
         self.pavage = np.zeros([2 * self.order] * 2, dtype='O')
+
+
+
+# Cette fonction génère un rectangle en grille pour la production du diamant
+    def production_rect_grille(self):
+        self.grid_rects = [
+            pygame.Rect(
+                round(AFFICHAGE_Taille / 2 * (i + 1) / (self.order + 1)),  # gauche
+                round(AFFICHAGE_Taille / 2 * (1 - (i + 1) / (self.order + 1))),  # en haut
+                round(AFFICHAGE_Taille * (self.order - i) / (self.order + 1)),  # largeur
+                round(AFFICHAGE_Taille * (i + 1) / (self.order + 1)),  # taille
+            )
+            for i in range(self.order)
+        ]
+# Description des étapes du pavage
+    def etape_pavage(self, draw: bool = False):
+        self.increase_order()
+        if draw:
+            self.draw()
+        self.cancel_opposing_movers() # supprimer les carreaux 
+                                        #orientés dans le même sens
+        if draw:
+            self.draw()
+        self.move_tiles()
+        if draw:
+            self.draw()
+        self.fill_two_by_twos() # remplir 2 par 2 (le diamant est symétrique)
+        if draw:
+            self.draw()
