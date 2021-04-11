@@ -40,3 +40,5 @@ class Domino:
         
         if order is not None:
             self.gen_rect(order=order)
+
+        
