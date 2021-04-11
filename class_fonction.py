@@ -10,10 +10,10 @@ BORDURE_Couleur = (0, ) * 3
 BORDURE_Largeur = 2
 ORIENTATIONS = N, S, E, O = range(4) #direction
 PAVAGE_Couleur = {
-    N: (0, 114, 189) ;  # bleu
-    S: (119, 172, 48) ;  # vert
-    E: (162, 20, 47) ;  # rouge
-    O: (237, 177, 32) ;  # jaune
+    N: (0, 114, 189) ,  # bleu
+    S: (119, 172, 48) ,  # vert
+    E: (162, 20, 47) ,  # rouge
+    O: (237, 177, 32) ,  # jaune
     None: (200, ) * 3
 }
 PAVAGE_Etape = {
@@ -23,12 +23,12 @@ PAVAGE_Etape = {
     O: np.array([0, -1]), #Ouest
 }
 PAVAGE_Etape_conflits = {
-    N: S ;
-    S: N ;
-    E: O ;
-    O: E ; 
+    N: S ,
+    S: N ,
+    E: O ,
+    O: E ,
 
-}
+
 
 
 class Domino:
