@@ -60,7 +60,7 @@ class aztecdiamond:
 
 # Cette fonction génère un rectangle en grille pour la production du diamant
     def production_rect_grille(self):
-        self.grid_rects = [
+        self.grille_rects = [
             pygame.Rect(
                 round(AFFICHAGE_Taille / 2 * (i + 1) / (self.order + 1)),  # gauche
                 round(AFFICHAGE_Taille / 2 * (1 - (i + 1) / (self.order + 1))),  # en haut
@@ -84,3 +84,31 @@ class aztecdiamond:
         self.fill_two_by_twos() # remplir 2 par 2 (le diamant est symétrique)
         if draw:
             self.draw()
+# 
+    def augmentation_taille(self):
+        self.order += 1
+
+        pavage = self.pavage
+        self.generate_diamond_array()  # sefl pavage 
+        self.pavage[1:-1, 1:-1] = pavage
+
+        self.production_rect_grille()
+        [tile.gen_rect(order=self.order) for tile in self.tiles]
+
+    def suppression_oppose(self):
+        for i, j in zip(*np.where(self.diamond)):
+            tile = self.pavage[i, j]
+            if tile == 0:
+                continue
+            i2, j2 = np.array([i, j]) + PAVAGE_EtapeTEPS[tile.orientation] #revoir pavage
+            if not (0 <= i2 <= 2 * self.order and 0 <= j2 <= 2 * self.order):
+                continue
+            tile2 = self.pavage[i2, j2]
+            if tile2 == 0:
+                continue
+            if tile2.orientation == TILE_STEP_CONFLICTS[tile.orientation]:
+                self.pavage[np.where(self.pavage == tile)] = 0
+                self.pavage[np.where(self.pavage == tile2)] = 0
+                self.tiles.remove(tile)
+                self.tiles.remove(tile2)
+#####
