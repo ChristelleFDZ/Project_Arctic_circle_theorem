@@ -123,3 +123,28 @@ class aztecdiamond:
 
     def ecran_vide(self):
         self.screen.fill(ARRIEREPLAN_Couleur)
+
+
+    def dessin_grille(self):
+        [
+            pygame.draw.rect(self.screen, rect=rect, color=PAVAGE_Couleur[None])
+            for rect in self.grid_rects
+        ]
+        pygame.draw.line(
+            self.screen,
+            color=BORDURE_Couleur,
+            start_pos=(round(AFFICHAGE_Taille / 2 / (self.order + 1)), round(AFFICHAGE_Taille / 2)),  # position de départ
+            end_pos=(round(AFFICHAGE_Taille / 2 * (1 + self.order / (self.order + 1))), round(AFFICHAGE_Taille / 2)), #position finale
+            width=Bordure_Largeur if self.order < 90 else 1
+        )
+        pygame.draw.line(
+            self.screen,
+            color=BORDURE_Couleur,
+            start_pos=(round(AFFICHAGE_Taille / 2), round(AFFICHAGE_Taille / 2 / (self.order + 1))),  # position de départ
+            end_pos=(round(AFFICHAGE_Taille / 2), round(AFFICHAGE_Taille / 2 * (1 + self.order / (self.order + 1)))), #position finale
+            width=Bordure_Largeur if self.order < 90 else 1
+        )
+        [
+            pygame.draw.rect(self.screen, rect=rect, color=BORDURE_Couleur, width=Bordure_Largeur if self.order < 90 else 1)
+            for rect in self.grid_rects
+        ]
