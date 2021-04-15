@@ -112,3 +112,26 @@ class aztecdiamond:
                 self.tiles.remove(tile)
                 self.tiles.remove(tile2)
 #####
+
+
+    def gerer_evenements(self):
+        if self.fps is not None:
+            self.clock.tick(self.fps)
+        for event in pygame.event.get(): # uttilisée pour la gestion des touches au clavier
+            if event.type == pygame.QUIT:
+                pygame.quit() #uninitialize all pygame modules
+                quit()
+
+    def ecran_vide(self):
+        self.screen.fill(ARRIEREPLAN_Couleur)
+#
+    def dessin_tuiles(self):
+        for tile in self.tiles:
+            pygame.draw.rect(self.screen, rect=tile.rect, color=PAVAGE_Couleur[tile.orientation])
+            pygame.draw.rect(self.screen, rect=tile.rect,
+                             color=BORDURE_Couleur, width=Bordure_Largeur if self.order < 90 else 1)
+
+    def dessin_commentaire(self):
+        label = self.font.render(f'AztecDiamond (n = {self.order})', True, PAVAGE_Couleur[None])
+        self.screen.blit(label, np.array([AFFICHAGE_Taille, 0]).astype(int) + [-label.get_width(), 0])   
+            
