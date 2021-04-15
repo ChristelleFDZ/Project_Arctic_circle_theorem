@@ -112,3 +112,14 @@ class aztecdiamond:
                 self.pavage[np.where(self.pavage == tile2)] = 0
                 self.tiles.remove(tile)
                 self.tiles.remove(tile2)
+                
+    def gerer_evenements(self):
+        if self.fps is not None:
+            self.clock.tick(self.fps)
+        for event in pygame.event.get(): # uttilisée pour la gestion des touches au clavier
+            if event.type == pygame.QUIT:
+                pygame.quit() #uninitialize all pygame modules
+                quit()
+
+    def ecran_vide(self):
+        self.screen.fill(ARRIEREPLAN_Couleur)
