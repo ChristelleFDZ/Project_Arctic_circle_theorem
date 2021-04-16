@@ -148,3 +148,13 @@ class aztecdiamond:
             pygame.draw.rect(self.screen, rect=rect, color=BORDURE_Couleur, width=Bordure_Largeur if self.order < 90 else 1)
             for rect in self.grid_rects
         ]
+        
+    def dessin_tuiles(self):
+        for tile in self.tiles:
+            pygame.draw.rect(self.screen, rect=tile.rect, color=PAVAGE_Couleur[tile.orientation])
+            pygame.draw.rect(self.screen, rect=tile.rect,
+                             color=BORDURE_Couleur, width=Bordure_Largeur if self.order < 90 else 1)
+
+    def dessin_commentaire(self):
+        label = self.font.render(f'AztecDiamond (n = {self.order})', True, PAVAGE_Couleur[None])
+        self.screen.blit(label, np.array([AFFICHAGE_Taille, 0]).astype(int) + [-label.get_width(), 0])
