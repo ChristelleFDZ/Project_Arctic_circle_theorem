@@ -90,7 +90,7 @@ class aztecdiamond:
         self.order += 1
 
         pavage = self.pavage
-        self.generate_diamond_array()  # sefl pavage 
+        self.generate_diamond_array()  #  pavage 
         self.pavage[1:-1, 1:-1] = pavage
 
         self.production_rect_grille()
@@ -112,7 +112,25 @@ class aztecdiamond:
                 self.pavage[np.where(self.pavage == tile2)] = 0
                 self.tiles.remove(tile)
                 self.tiles.remove(tile2)
-                
+
+    def move_tiles(self):
+        self.pavage = np.zeros([2 * self.order] * 2, dtype='O')
+        for tile in self.tiles:
+            tile.step()
+            tile.gen_rect(order=self.order)
+            self.pavage[tuple(tile.angle_droit_h + self.order)] = tile
+            self.pavage[tuple(tile.angle_droit_h + self.order
+                              + (PAVAGE_Etapes[S] if tile.orientation in (E, O) else PAVAGE_Etapes[E])
+                              )] = tile
+## fonction Omar 
+def draw(self):
+        self.gerer_evenements()
+        self.ecran_vide()
+        self.dessin_grille()
+        self.dessin_tuiles()
+        self.dessin_commentaire()
+        pygame.display.flip()
+
     def gerer_evenements(self):
         if self.fps is not None:
             self.clock.tick(self.fps)
