@@ -1,8 +1,7 @@
-from _init_ import aztecdiamond
-
+from aztecdiamond import aztecdiamond
 
 def main():
-    # Initialize an empty A(1) diamond and draw it
+    # Initialize an empty Aztecdiamond(1) diamond and draw it
     diamond = aztecdiamond(order=1)
     diamond.draw()
 
