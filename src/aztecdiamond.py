@@ -196,3 +196,4 @@ class aztecdiamond:
     def dessin_commentaire(self):
         label = self.font.render(f'AztecDiamond (n = {self.order})', True, PAVAGE_Couleur[None])
         self.screen.blit(label, np.array([AFFICHAGE_Taille, 0]).astype(int) + [-label.get_width(), 0])
+# %%

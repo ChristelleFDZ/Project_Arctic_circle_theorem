@@ -26,7 +26,7 @@ PAVAGE_Etape_conflits = {
     S: N ,
     E: O ,
     O: E ,
-
+}
 
 
 
