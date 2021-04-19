@@ -2,6 +2,7 @@
 import random
 import numpy as np
 import pygame
+from domino import Domino
 
 #option d'affichage (on pourra changer les parametres si trop petit a voir ensemble.. )
 #definition des couleurs et orientation 
@@ -47,7 +48,7 @@ class aztecdiamond:
         self.clock = pygame.time.Clock()
 
         self.grille_rects = None
-        self.generate_grille_rects()
+        self.production_rect_grille()
 
     def generate_diamond_array(self):
         tri = np.triu(np.ones([self.order] * 2))
@@ -72,17 +73,17 @@ class aztecdiamond:
         ]
 # Description des étapes du pavage
     def etape_pavage(self, draw: bool = False):
-        self.increase_order()
+        self.augmentation_taille()
         if draw:
             self.draw()
-        self.cancel_opposing_movers() # supprimer les carreaux 
+        self.supression_opposé() # supprimer les carreaux 
                                         #orientés dans le même sens
         if draw:
             self.draw()
         self.move_tiles()
         if draw:
             self.draw()
-        self.fill_two_by_twos() # remplir 2 par 2 (le diamant est symétrique)
+        self.remplissage_deuxdeux() # remplir 2 par 2 (le diamant est symétrique)
         if draw:
             self.draw()
 # 
@@ -101,13 +102,13 @@ class aztecdiamond:
             tile = self.pavage[i, j]
             if tile == 0:
                 continue
-            i2, j2 = np.array([i, j]) + PAVAGE_EtapeTEPS[tile.orientation] #revoir pavage
+            i2, j2 = np.array([i, j]) + PAVAGE_Etapes[tile.orientation] #revoir pavage
             if not (0 <= i2 <= 2 * self.order and 0 <= j2 <= 2 * self.order):
                 continue
             tile2 = self.pavage[i2, j2]
             if tile2 == 0:
                 continue
-            if tile2.orientation == TILE_STEP_CONFLICTS[tile.orientation]:
+            if tile2.orientation == PAVAGE_Etape_conflits[tile.orientation]:
                 self.pavage[np.where(self.pavage == tile)] = 0
                 self.pavage[np.where(self.pavage == tile2)] = 0
                 self.tiles.remove(tile)
@@ -166,7 +167,7 @@ class aztecdiamond:
     def dessin_grille(self):
         [
             pygame.draw.rect(self.screen, rect=rect, color=PAVAGE_Couleur[None])
-            for rect in self.grid_rects
+            for rect in self.grille_rects
         ]
         pygame.draw.line(
             self.screen,
@@ -184,7 +185,7 @@ class aztecdiamond:
         )
         [
             pygame.draw.rect(self.screen, rect=rect, color=BORDURE_Couleur, width=Bordure_Largeur if self.order < 90 else 1)
-            for rect in self.grid_rects
+            for rect in self.grille_rects
         ]
         
     def dessin_tuiles(self):
