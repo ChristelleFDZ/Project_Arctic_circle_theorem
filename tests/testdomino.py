@@ -1,10 +1,9 @@
 import unittest
-
-
+import numpy as np
 
 class testdomino(unittest.TestCase):
     def test_ifonction_is_instance_of_domino(self): # la fonction __init__
-        d = Domino(angle_droit_h,np.array([-1, 0]) )
+        d = Domino(angle_droit_h[1],np.array([-1, 0]),order=None )
         self.assertIsInstance(d, Domino)
 
     def test_domino_rectangle(self):
@@ -15,3 +14,5 @@ class testdomino(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()     
 # OK
+#Ran 2 tests in 0.001s
+#FAILED (errors=2)

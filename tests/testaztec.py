@@ -8,8 +8,9 @@ class test_aztect_instance(unittest.TestCase):
     def test_aztec_grille(self):
         gda = production_rect_grille(self)
         self.assertIsInstance(gda.grille_rects,production_rect_grille)    
-##probleme au return : RAN O tests in O.000s
-#je comprends pas l'erreur...
 
-    if __name__ == '__main__':
-        unittest.main()     
+if __name__ == '__main__':
+    unittest.main()   
+      
+#Ran 2 tests in 0.001s
+#FAILED (errors=2)
