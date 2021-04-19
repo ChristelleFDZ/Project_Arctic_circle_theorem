@@ -122,8 +122,28 @@ class aztecdiamond:
             self.pavage[tuple(tile.angle_droit_h + self.order
                               + (PAVAGE_Etapes[S] if tile.orientation in (E, O) else PAVAGE_Etapes[E])
                               )] = tile
-## fonction Omar 
-def draw(self):
+
+    def remplisage_deuxdeux(self):
+        while np.any((self.pavage == 0) & (self.diamond == 1)):
+            ii, jj = [i[0] for i in np.where((self.pavage == 0) & (self.diamond == 1))]
+            if random.random() < 0.5:
+                tile_a = Domino((ii - self.order, jj - self.order), O, self.order)
+                self.pavage[ii, jj] = tile_a
+                self.pavage[ii + 1, jj] = tile_a
+                tile_b = Domino((ii - self.order, jj - self.order + 1), E, self.order)
+                self.pavage[ii, jj + 1] = tile_b
+                self.pavage[ii + 1, jj + 1] = tile_b
+            else:
+                tile_a = Domino((ii - self.order, jj - self.order), N, self.order)
+                self.pavage[ii, jj] = tile_a
+                self.pavage[ii, jj + 1] = tile_a
+                tile_b = Domino((ii - self.order + 1, jj - self.order), S, self.order)
+                self.pavage[ii + 1, jj] = tile_b
+                self.pavage[ii + 1, jj + 1] = tile_b
+            self.tiles.append(tile_a)
+            self.tiles.append(tile_b)
+
+    def draw(self):
         self.gerer_evenements()
         self.ecran_vide()
         self.dessin_grille()
