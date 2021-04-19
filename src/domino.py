@@ -3,7 +3,7 @@ import pygame
 
 #option d'affichage (on pourra changer les parametres si trop petit a voir ensemble.. )
 #definition des couleurs et orientation 
-AFFICHAGE_Taille = 1000
+AFFICHAGE_Taille = 800
 ARRIEREPLAN_Couleur = (20, ) * 3 # Choix noirs ??
 BORDURE_Couleur = (0, ) * 3
 BORDURE_Largeur = 2
@@ -15,7 +15,7 @@ PAVAGE_Couleur = {
     O: (237, 177, 32) ,  # jaune
     None: (200, ) * 3
 }
-PAVAGE_Etape = {
+PAVAGE_Etapes = {
     N: np.array([-1, 0]), #Nord
     S: np.array([1, 0]), # Sud
     E: np.array([0, 1]), # Est
@@ -39,6 +39,7 @@ class Domino:
         
         if order is not None:
             self.gen_rect(order=order)
+
     def gen_rect(self, order):
         TAILLE_Grille = AFFICHAGE_Taille / 2 / (order + 1) 
         self.rect = pygame.Rect(

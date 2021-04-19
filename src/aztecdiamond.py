@@ -1,4 +1,4 @@
-# %%
+
 import random
 import numpy as np
 import pygame
@@ -6,29 +6,29 @@ from domino import Domino
 
 #option d'affichage (on pourra changer les parametres si trop petit a voir ensemble.. )
 #definition des couleurs et orientation 
-AFFICHAGE_Taille = 1000
-ARRIEREPLAN_Couleur = (20, ) * 3 # Choix noirs ??
-BORDURE_Couleur = (0, ) * 3
-BORDURE_Largeur = 2
-ORIENTATIONS = N, S, E, O = range(4) #direction
-PAVAGE_Couleur = {
-    N: (0, 114, 189) ,  # bleu
-    S: (119, 172, 48) ,  # vert
-    E: (162, 20, 47) ,  # rouge
-    O: (237, 177, 32) ,  # jaune
+AFFICHAGE_Taille = 800 
+ARRIEREPLAN_Couleur = (20, ) * 3 
+BORDURE_Couleur = (0, ) * 3 
+Bordure_Largeur = 2 
+ORIENTATIONS = N, S, E, O = range(4)
+PAVAGE_Couleur = { 
+    N: (0, 114, 189),  # Bleu
+    S: (119, 172, 48),  # vert
+    E: (162, 20, 47),  # rouge
+    O: (237, 177, 32),  # jaune 
     None: (200, ) * 3
 }
-PAVAGE_Etape = {
-    N: np.array([-1, 0]), #Nord
-    S: np.array([1, 0]), # Sud
-    E: np.array([0, 1]), # Est
-    O: np.array([0, -1]), #Ouest
+PAVAGE_Etapes = { 
+    N: np.array([-1, 0]),
+    S: np.array([1, 0]),
+    E: np.array([0, 1]),
+    O: np.array([0, -1]),
 }
-PAVAGE_Etape_conflits = {
-    N: S ,
-    S: N ,
-    E: O ,
-    O: E ,
+PAVAGE_Etape_conflits = { 
+    N: S,
+    S: N,
+    E: O,
+    O: E,
 }
 
 class aztecdiamond:
@@ -58,8 +58,6 @@ class aztecdiamond:
         ], axis=0)
         self.pavage = np.zeros([2 * self.order] * 2, dtype='O')
 
-
-
 # Cette fonction génère un rectangle en grille pour la production du diamant
     def production_rect_grille(self):
         self.grille_rects = [
@@ -76,7 +74,7 @@ class aztecdiamond:
         self.augmentation_taille()
         if draw:
             self.draw()
-        self.supression_opposé() # supprimer les carreaux 
+        self.suppression_oppose() # supprimer les carreaux 
                                         #orientés dans le même sens
         if draw:
             self.draw()
@@ -124,7 +122,7 @@ class aztecdiamond:
                               + (PAVAGE_Etapes[S] if tile.orientation in (E, O) else PAVAGE_Etapes[E])
                               )] = tile
 
-    def remplisage_deuxdeux(self):
+    def remplissage_deuxdeux(self):
         while np.any((self.pavage == 0) & (self.diamond == 1)):
             ii, jj = [i[0] for i in np.where((self.pavage == 0) & (self.diamond == 1))]
             if random.random() < 0.5:
@@ -172,15 +170,15 @@ class aztecdiamond:
         pygame.draw.line(
             self.screen,
             color=BORDURE_Couleur,
-            start_pos=(round(AFFICHAGE_Taille / 2 / (self.order + 1)), round(AFFICHAGE_Taille / 2)),  # position de départ
-            end_pos=(round(AFFICHAGE_Taille / 2 * (1 + self.order / (self.order + 1))), round(AFFICHAGE_Taille / 2)), #position finale
+            start_pos=(round(AFFICHAGE_Taille / 2 / (self.order + 1)), round(AFFICHAGE_Taille / 2)),
+            end_pos=(round(AFFICHAGE_Taille / 2 * (1 + self.order / (self.order + 1))), round(AFFICHAGE_Taille / 2)),
             width=Bordure_Largeur if self.order < 90 else 1
         )
         pygame.draw.line(
             self.screen,
             color=BORDURE_Couleur,
-            start_pos=(round(AFFICHAGE_Taille / 2), round(AFFICHAGE_Taille / 2 / (self.order + 1))),  # position de départ
-            end_pos=(round(AFFICHAGE_Taille / 2), round(AFFICHAGE_Taille / 2 * (1 + self.order / (self.order + 1)))), #position finale
+            start_pos=(round(AFFICHAGE_Taille / 2), round(AFFICHAGE_Taille / 2 / (self.order + 1))),
+            end_pos=(round(AFFICHAGE_Taille / 2), round(AFFICHAGE_Taille / 2 * (1 + self.order / (self.order + 1)))),
             width=Bordure_Largeur if self.order < 90 else 1
         )
         [
