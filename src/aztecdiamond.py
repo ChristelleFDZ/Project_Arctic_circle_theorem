@@ -71,7 +71,7 @@ class aztecdiamond:
         ]
 # Description des étapes du pavage
     def etape_pavage(self, draw: bool = False):
-        self.augmentation_taille()
+        self.augmentation_taille()  #test--self.order
         if draw:
             self.draw()
         self.suppression_oppose() # supprimer les carreaux 
@@ -85,7 +85,7 @@ class aztecdiamond:
         if draw:
             self.draw()
 # 
-    def augmentation_taille(self):
+    def augmentation_taille(self): #test--self.order
         self.order += 1
 
         pavage = self.pavage
