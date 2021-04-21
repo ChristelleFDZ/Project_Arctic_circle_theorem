@@ -1,7 +1,11 @@
+# %%
+"""
+This program will set up the paving process with dominoes
+
+"""
 import numpy as np
 import pygame
 
-#option d'affichage (on pourra changer les parametres si trop petit a voir ensemble.. )
 #definition des couleurs et orientation 
 AFFICHAGE_Taille = 800
 ARRIEREPLAN_Couleur = (20, ) * 3 # Choix noirs ??
@@ -31,7 +35,25 @@ PAVAGE_Etape_conflits = {
 
 
 class Domino:
+    """
+    This class will contain the different steps for the tiling
+
+    """
+    #version ='0.1'
     def __init__(self, angle_droit_h, orientation, order=None):
+        """
+        Creates the variables associated with the class
+        :type angle_droit_h: array
+        :param angle_droit_h: an instance of the class passed to __init__
+
+        :type orientation: array # for example: North(N): np.array([-1, 0])
+        :param orientation: The direction of the domino
+
+        :type order: int 
+        :param order: an instance of the class passed to __init__ ; The default value of order is None
+        
+        """
+        
         assert orientation in ORIENTATIONS
         self.angle_droit_h = np.array(angle_droit_h)
         self.orientation = orientation
@@ -41,6 +63,11 @@ class Domino:
             self.gen_rect(order=order)
 
     def gen_rect(self, order):
+        """
+        Generates rectangles for the tiling
+        In fact, dominoes have rectangular shape
+
+        """
         TAILLE_Grille = AFFICHAGE_Taille / 2 / (order + 1) 
         self.rect = pygame.Rect(
             round(TAILLE_Grille * (order + 1 + self.angle_droit_h[1])),  #  haut
@@ -51,6 +78,3 @@ class Domino:
 
     def step(self):
         self.angle_droit_h += PAVAGE_Etapes[self.orientation]
-
-
-        
