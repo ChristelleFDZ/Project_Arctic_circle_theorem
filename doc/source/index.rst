@@ -11,8 +11,8 @@ Welcome to Project Arctic circle theorem 's documentation!
 
 
 .. toctree::
-   :maxdepth: 3
-   :caption: Installation :
+   :maxdepth: 1
+   :caption: Contents:
 
    installation/installation
 
