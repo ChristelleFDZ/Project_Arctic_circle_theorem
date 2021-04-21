@@ -12,13 +12,13 @@ Welcome to Project Arctic circle theorem 's documentation!
 
 .. toctree::
    :maxdepth: 1
-   :caption: Installation 
+   :caption: Install 
 
    installation/installation
 
 .. toctree::
    :maxdepth: 2
-   :caption: Other install :
+   :caption: Sources and contacts :
 
    install/sources
    install/contact
