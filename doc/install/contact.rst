@@ -1,5 +1,5 @@
-# Contacts 
-
+Contacts 
+========
 If you have remarks, suggestions for improvement or errors to report, you can fill out a pull request on Github.
 
 
