@@ -2,10 +2,10 @@
 
 ## Install from github
 To install this package, you can simply put in the prompt:
-```rst
+```bash
 $ pip install https://github.com/ChristelleFDZ/Project_Arctic_circle_theorem-.git 
 ```
 and you have to install this package to see the visualization of Aztec Diamond:
-```rst
+```bash
 $ pip install pygame
 ```
