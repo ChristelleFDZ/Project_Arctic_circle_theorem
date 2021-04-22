@@ -24,7 +24,7 @@ pip install
 We recommend to clone the entire folder and them install it (git must be functional on your computer)
 
 ```
-$ git clone https://github.com/ChristelleFDZ/Project_Arctic_circle_theorem.git
+$ git clone https://github.com/ChristelleFDZ/projectarcticcircletheorem.git
 ```
 
 ## Documentation
