@@ -32,6 +32,10 @@ PAVAGE_Etape_conflits = {
 }
 
 class aztecdiamond:
+     """
+    This class will create the figure of Aztec diamond with the theorem
+
+    """
     def __init__(self, order, fps=4):
         assert type(order) is int and order > 0
         self.order = order
@@ -113,6 +117,7 @@ class aztecdiamond:
                 self.tiles.remove(tile2)
 
     def move_tiles(self):
+        """ the fuction move_tile create a new board and add the moved tiles in one at a time """
         self.pavage = np.zeros([2 * self.order] * 2, dtype='O')
         for tile in self.tiles:
             tile.step()
@@ -123,9 +128,13 @@ class aztecdiamond:
                               )] = tile
 
     def remplissage_deuxdeux(self):
+        """
+        remplissage_deuxdeux use our class Domino to fill in two by two the paving to the top and bottom and to the left and right.
+        """
         while np.any((self.pavage == 0) & (self.diamond == 1)):
             ii, jj = [i[0] for i in np.where((self.pavage == 0) & (self.diamond == 1))]
             if random.random() < 0.5:
+                #Haut/Bas
                 tile_a = Domino((ii - self.order, jj - self.order), O, self.order)
                 self.pavage[ii, jj] = tile_a
                 self.pavage[ii + 1, jj] = tile_a
@@ -133,6 +142,7 @@ class aztecdiamond:
                 self.pavage[ii, jj + 1] = tile_b
                 self.pavage[ii + 1, jj + 1] = tile_b
             else:
+                #Gauche/Droite
                 tile_a = Domino((ii - self.order, jj - self.order), N, self.order)
                 self.pavage[ii, jj] = tile_a
                 self.pavage[ii, jj + 1] = tile_a
@@ -143,7 +153,10 @@ class aztecdiamond:
             self.tiles.append(tile_b)
 
     def draw(self):
-        self.gerer_evenements()
+        """
+        This function allows you to create the animation with 5 instance variables
+        """
+        self.gerer_evenements() 
         self.ecran_vide()
         self.dessin_grille()
         self.dessin_tuiles()
@@ -151,6 +164,7 @@ class aztecdiamond:
         pygame.display.flip()
 
     def gerer_evenements(self):
+        """ The first one function is to generate events """
         if self.fps is not None:
             self.clock.tick(self.fps)
         for event in pygame.event.get(): # uttilisée pour la gestion des touches au clavier
@@ -159,12 +173,14 @@ class aztecdiamond:
                 quit()
 
     def ecran_vide(self):
+        """ the function ecran_vide is to fill the screen with the color of the background (black color)"""
         self.screen.fill(ARRIEREPLAN_Couleur)
 
 
     def dessin_grille(self):
+    
         [
-            pygame.draw.rect(self.screen, rect=rect, color=PAVAGE_Couleur[None])
+            pygame.draw.rect(self.screen, rect=rect, color=PAVAGE_Couleur[None]) 
             for rect in self.grille_rects
         ]
         pygame.draw.line(
@@ -187,12 +203,15 @@ class aztecdiamond:
         ]
         
     def dessin_tuiles(self):
+        """ this function create a rectangular drawn on the paving"""
         for tile in self.tiles:
             pygame.draw.rect(self.screen, rect=tile.rect, color=PAVAGE_Couleur[tile.orientation])
             pygame.draw.rect(self.screen, rect=tile.rect,
                              color=BORDURE_Couleur, width=Bordure_Largeur if self.order < 90 else 1)
 
     def dessin_commentaire(self):
-        label = self.font.render(f'AztecDiamond (n = {self.order})', True, PAVAGE_Couleur[None])
+        """ dessin_commentaire is a function that allows you to display comments in the visualization"""
+
+        label = self.font.render('AztecDiamond (n = {self.order})', True, PAVAGE_Couleur[None])
         self.screen.blit(label, np.array([AFFICHAGE_Taille, 0]).astype(int) + [-label.get_width(), 0])
-# %%
+
