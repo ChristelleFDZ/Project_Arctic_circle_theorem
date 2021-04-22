@@ -5,11 +5,11 @@ Project for HMMA238
 
 ## Synopsis
 
-This project deal with the arctic circle theorem ( or Aztec Diamonds theorem). The picture at the top is the expected end result.
+This project deals with the arctic circle theorem ( or Aztec Diamonds theorem). The picture at the top is the expected end result.
 
 ## Install
 
-First,you have to check that all python packages in the  **requirements.txt** file are installed in the correct version. To make sure if every dependencies are installed in the right version you can simply run in a prompt:
+First, you have to check that all python packages in the  **requirements.txt** file are installed in the correct version. To make sure if every dependencies are installed in the right version you can simply run in a prompt:
 
 ```
 pip install -r requirements.txt
