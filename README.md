@@ -18,7 +18,7 @@ pip install -r requirements.txt
 In order to put the package for Aztec Diamonds, you have to run in its command prompt the following line.
 
 ```
-pip install 
+pip install -i https://test.pypi.org/simple/ aztecdiamond==0.0.1
 ```
 
 We recommend to clone the entire folder and them install it (git must be functional on your computer)
