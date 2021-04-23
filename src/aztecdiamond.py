@@ -216,6 +216,6 @@ class aztecdiamond:
     def dessin_commentaire(self):
         """ dessin_commentaire is a function that allows you to display comments in the visualization"""
 
-        label = self.font.render('AztecDiamond (n = {self.order})', True, PAVAGE_Couleur[None])
+        label = self.font.render(f'AztecDiamond (n = {self.order})', True, PAVAGE_Couleur[None])
         self.screen.blit(label, np.array([AFFICHAGE_Taille, 0]).astype(int) + [-label.get_width(), 0])
 
