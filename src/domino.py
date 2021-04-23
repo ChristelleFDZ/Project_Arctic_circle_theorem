@@ -1,4 +1,3 @@
-# %%
 """
 This program will set up the paving process with dominoes
 

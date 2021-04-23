@@ -1,4 +1,3 @@
-
 import random
 import numpy as np
 import pygame
@@ -85,7 +84,7 @@ class aztecdiamond:
         if draw:
             self.draw()
 # 
-    def augmentation_taille(self): #test--self.order
+    def augmentation_taille(self): 
         self.order += 1
 
         pavage = self.pavage
@@ -195,4 +194,3 @@ class aztecdiamond:
     def dessin_commentaire(self):
         label = self.font.render(f'AztecDiamond (n = {self.order})', True, PAVAGE_Couleur[None])
         self.screen.blit(label, np.array([AFFICHAGE_Taille, 0]).astype(int) + [-label.get_width(), 0])
-# %%
