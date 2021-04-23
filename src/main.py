@@ -5,7 +5,7 @@ def main():
     diamond = aztecdiamond(order=1)
     diamond.draw()
 
-    # Fill the A(1) diamond with a randomly-oriented domino pair
+    # Fill the Aztecdiamond(1) with a randomly-oriented domino pair
     diamond.remplissage_deuxdeux()
     diamond.draw()
 

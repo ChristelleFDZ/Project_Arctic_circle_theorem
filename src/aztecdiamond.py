@@ -1,9 +1,14 @@
+"""
+This program will set up the development process of the Aztec diamond.
+The elaboration of the Diamond respects the Arctic circle theorem and therefore the paving process with dominoes.
+In fact, the execution of the program requires the use of the class Domino.
+"""
+# On importe les modules random, numpy, pygame et notre classe domino pour pouvoir les utiliser dans notre code
 import random
 import numpy as np
-import pygame
+import pygame 
 from domino import Domino
 
-#option d'affichage (on pourra changer les parametres si trop petit a voir ensemble.. )
 #definition des couleurs et orientation 
 AFFICHAGE_Taille = 800 
 ARRIEREPLAN_Couleur = (20, ) * 3 
@@ -31,7 +36,19 @@ PAVAGE_Etape_conflits = {
 }
 
 class aztecdiamond:
+    """
+    This class will contain the different steps to create the Aztec diamond
+
+    """
+
     def __init__(self, order, fps=4):
+        """ 
+        Creates the variables associated with the class aztecdiamond
+        :type order: int 
+        :param order: an instance of the class passed to __init__ 
+        :type fps: int
+        :param fps: an instance of the classpassed to __init__ . The initial value of fps is 4
+        """
         assert type(order) is int and order > 0
         self.order = order
         self.fps = fps
@@ -41,7 +58,7 @@ class aztecdiamond:
         self.pavage = None
         self.generate_diamond_array()
 
-        pygame.init()
+        pygame.init() # initialise le module pygame 
         self.screen = pygame.display.set_mode([AFFICHAGE_Taille, AFFICHAGE_Taille])
         self.font = pygame.font.SysFont(pygame.font.get_default_font(), 32)
         self.clock = pygame.time.Clock()
@@ -50,6 +67,9 @@ class aztecdiamond:
         self.production_rect_grille()
 
     def generate_diamond_array(self):
+        """
+        Generates diamond array
+        """
         tri = np.triu(np.ones([self.order] * 2))
         self.diamond = np.concatenate([
             np.concatenate([np.flipud(tri), np.transpose(tri)], axis=1),
@@ -59,6 +79,9 @@ class aztecdiamond:
 
 # Cette fonction génère un rectangle en grille pour la production du diamant
     def production_rect_grille(self):
+        """
+        Generates a grid with rectangles
+        """
         self.grille_rects = [
             pygame.Rect(
                 round(AFFICHAGE_Taille / 2 * (i + 1) / (self.order + 1)),  # gauche
@@ -70,6 +93,12 @@ class aztecdiamond:
         ]
 # Description des étapes du pavage
     def etape_pavage(self, draw: bool = False):
+        """
+        Describes the paving process by following the paving process rule
+        Use 4 different functions : augmentation_taille, suppression_oppose, draw, remplissage_deuxdeux
+        :type draw: bool
+        :param order: the default value of draw is False
+        """
         self.augmentation_taille()  #test--self.order
         if draw:
             self.draw()
@@ -85,6 +114,10 @@ class aztecdiamond:
             self.draw()
 # 
     def augmentation_taille(self): 
+        """
+        Increases the size of the Diamond
+        At each iteration, the order increase by one
+        """
         self.order += 1
 
         pavage = self.pavage
@@ -95,11 +128,14 @@ class aztecdiamond:
         [tile.gen_rect(order=self.order) for tile in self.tiles]
 
     def suppression_oppose(self):
+        """
+        Removes tiles with opposite directions
+        """
         for i, j in zip(*np.where(self.diamond)):
             tile = self.pavage[i, j]
             if tile == 0:
                 continue
-            i2, j2 = np.array([i, j]) + PAVAGE_Etapes[tile.orientation] #revoir pavage
+            i2, j2 = np.array([i, j]) + PAVAGE_Etapes[tile.orientation]
             if not (0 <= i2 <= 2 * self.order and 0 <= j2 <= 2 * self.order):
                 continue
             tile2 = self.pavage[i2, j2]
@@ -112,6 +148,9 @@ class aztecdiamond:
                 self.tiles.remove(tile2)
 
     def move_tiles(self):
+        """
+        Moves tiles in different orientations
+        """
         self.pavage = np.zeros([2 * self.order] * 2, dtype='O')
         for tile in self.tiles:
             tile.step()
@@ -122,9 +161,13 @@ class aztecdiamond:
                               )] = tile
 
     def remplissage_deuxdeux(self):
+        """
+        Uses the class Domino to fill in two by two the paving to the top and bottom and to the left and right.
+        """
         while np.any((self.pavage == 0) & (self.diamond == 1)):
             ii, jj = [i[0] for i in np.where((self.pavage == 0) & (self.diamond == 1))]
             if random.random() < 0.5:
+                #Haut/Bas
                 tile_a = Domino((ii - self.order, jj - self.order), O, self.order)
                 self.pavage[ii, jj] = tile_a
                 self.pavage[ii + 1, jj] = tile_a
@@ -132,6 +175,7 @@ class aztecdiamond:
                 self.pavage[ii, jj + 1] = tile_b
                 self.pavage[ii + 1, jj + 1] = tile_b
             else:
+                #Gauche/Droite
                 tile_a = Domino((ii - self.order, jj - self.order), N, self.order)
                 self.pavage[ii, jj] = tile_a
                 self.pavage[ii, jj + 1] = tile_a
@@ -142,7 +186,11 @@ class aztecdiamond:
             self.tiles.append(tile_b)
 
     def draw(self):
-        self.gerer_evenements()
+        """
+        This function allows you to create the animation thanks to 5 functions:
+        gerer_evenements, ecran_vide,  dessin_grille, dessin_tuiles and dessin_commentaire
+        """
+        self.gerer_evenements() 
         self.ecran_vide()
         self.dessin_grille()
         self.dessin_tuiles()
@@ -152,18 +200,25 @@ class aztecdiamond:
     def gerer_evenements(self):
         if self.fps is not None:
             self.clock.tick(self.fps)
-        for event in pygame.event.get(): # uttilisée pour la gestion des touches au clavier
+        for event in pygame.event.get(): # utilisée pour la gestion des touches au clavier
             if event.type == pygame.QUIT:
-                pygame.quit() #uninitialize all pygame modules
+                pygame.quit() #initialize all pygame modules
                 quit()
 
     def ecran_vide(self):
+        """ 
+        Fills the screen with the color of the background (black color)
+        """
         self.screen.fill(ARRIEREPLAN_Couleur)
 
 
     def dessin_grille(self):
+        """
+        Draws grids
+        """
+    
         [
-            pygame.draw.rect(self.screen, rect=rect, color=PAVAGE_Couleur[None])
+            pygame.draw.rect(self.screen, rect=rect, color=PAVAGE_Couleur[None]) 
             for rect in self.grille_rects
         ]
         pygame.draw.line(
@@ -186,11 +241,19 @@ class aztecdiamond:
         ]
         
     def dessin_tuiles(self):
+        """
+        This function draws tiles : the shape is rectangular and the color can be blue,red,yellow or green accroding to the place and the direction of the tile
+
+        """
         for tile in self.tiles:
             pygame.draw.rect(self.screen, rect=tile.rect, color=PAVAGE_Couleur[tile.orientation])
             pygame.draw.rect(self.screen, rect=tile.rect,
                              color=BORDURE_Couleur, width=Bordure_Largeur if self.order < 90 else 1)
 
     def dessin_commentaire(self):
-        label = self.font.render(f'AztecDiamond (n = {self.order})', True, PAVAGE_Couleur[None])
+        """
+        Allows you to display comments in the visualization 
+        """
+
+        label = self.font.render('AztecDiamond (n = {self.order})', True, PAVAGE_Couleur[None])
         self.screen.blit(label, np.array([AFFICHAGE_Taille, 0]).astype(int) + [-label.get_width(), 0])

@@ -9,7 +9,7 @@ This project deals with the arctic circle theorem ( or Aztec Diamonds theorem). 
 
 ## Install
 
-First,you have to check that all python packages in the  **requirements.txt** file are installed in the correct version. To make sure if every dependencies are installed in the right version you can simply run in a prompt:
+First, you have to check that all python packages in the  **requirements.txt** file are installed in the correct version. To make sure if every dependencies are installed in the right version you can simply run in a prompt:
 
 ```
 pip install -r requirements.txt
@@ -24,7 +24,7 @@ pip install
 We recommend to clone the entire folder and them install it (git must be functional on your computer)
 
 ```
-$ git clone https://github.com/ChristelleFDZ/Project_Arctic_circle_theorem.git
+$ git clone https://github.com/ChristelleFDZ/projectarcticcircletheorem.git
 ```
 
 ## Documentation
