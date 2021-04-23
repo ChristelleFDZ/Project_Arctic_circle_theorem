@@ -1,7 +1,7 @@
-
+# On importe les modules random, numpy, pygame et notre classe domino pour pouvoir les uttiliser notre code
 import random
 import numpy as np
-import pygame
+import pygame 
 from domino import Domino
 
 #option d'affichage (on pourra changer les parametres si trop petit a voir ensemble.. )
@@ -32,11 +32,15 @@ PAVAGE_Etape_conflits = {
 }
 
 class aztecdiamond:
-     """
+    """
     This class will create the figure of Aztec diamond with the theorem
 
     """
     def __init__(self, order, fps=4):
+        """ 
+        __init__ is a reserved method in python classes to create an object and initialize the attributes of the class.
+    
+        """
         assert type(order) is int and order > 0
         self.order = order
         self.fps = fps
@@ -46,7 +50,7 @@ class aztecdiamond:
         self.pavage = None
         self.generate_diamond_array()
 
-        pygame.init()
+        pygame.init() # initialise le module pygame 
         self.screen = pygame.display.set_mode([AFFICHAGE_Taille, AFFICHAGE_Taille])
         self.font = pygame.font.SysFont(pygame.font.get_default_font(), 32)
         self.clock = pygame.time.Clock()
