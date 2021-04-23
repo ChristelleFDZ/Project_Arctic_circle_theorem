@@ -37,7 +37,7 @@ Hope you can find in this package something to satisfy your curiosity !
    :maxdepth: 1
    :caption: Documentation
 
-   Documentation/aztec
+   documentation/aztec
 
 
 

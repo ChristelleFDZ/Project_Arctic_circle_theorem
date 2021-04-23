@@ -1,6 +1,7 @@
 import unittest
 import numpy as np
 import sys 
+from domino import Domino
 sys.path.append("..") # for getting out of tests directory
 #from src.domino import Domino
 #  l'importation de Domino failed

@@ -4,7 +4,7 @@ Aztec Diamond
 What's an aztec diamond  ?
 -----------------------------
 
-In combinatorial mathematics, Aztec diamond of order n, is the set of all squares of square network whose centers (x,y) satisfy |x|+|y|< n .
+In combinatorial mathematics, Aztec diamond of order n, is the set of all squares of square network whose centers (x,y) satisfy  x + y < n .
 We will work with the squares of colored diamond in chessboard.
 
 Here is an example of Aztec diamond of order 1, 2, 3 and 6.
@@ -27,7 +27,7 @@ We are going to tile our Aztec diamond using dominoes. The rules of the paving a
 - secondly, they must not overlap 
 - and finally, don't come out of the figure.
 
-There are a very large number of possible ways to place them. Indeed, for an Aztec Diamond of order n, there are ![formula 
+There are a very large number of possible ways to place them. Indeed, for an Aztec Diamond of order n, there are 
 .. image:: https://render.githubusercontent.com/render/math?math=2%5E%7Bn(n%2B1)/2%7D several tilings.
 
 To represent different pavings, we will use a color convention that allows to distingue 4 possibilities of placement for a domino. 
@@ -38,19 +38,18 @@ To represent different pavings, we will use a color convention that allows to di
 - A vertical domino with a black square at the bottom is represented by a red domino.
 
 Below are 8 possibilities of paving an Aztec diamond of size 2:
+
 .. image:: https://user-images.githubusercontent.com/78490299/112157958-00619200-8be8-11eb-8330-ca0a3d207fee.png
    :align: center
 
 In this part, you'll see how to create the aztec diamond .
 
-The classes 
--------------
 
 The class toset up the paving process with dominoes :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autoclass:: src.domino.Domino
-    :members:
+    :members: __init__ ,gen_rect , 
 
 
 
@@ -73,8 +72,7 @@ The class toset up the shuffling dominoes to create the arctic circle :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autoclass:: src.aztecdiamond.aztecdiamond
-    :members:
-
+    :members: __init__ , generate_diamond_array , production_rect_grille, etape_pavage , augmentation_taille , suppression_oppose , move_tiles , remplissage_deuxdeux , draw , ecran_vide , dessin_grille , dessin_tuiles , dessin_commentaire
 
 
 .. image:: https://user-images.githubusercontent.com/78490299/112158817-d3fa4580-8be8-11eb-9dc5-036e8558cc52.png

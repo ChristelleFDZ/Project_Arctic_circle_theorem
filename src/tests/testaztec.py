@@ -1,9 +1,10 @@
 import unittest
 import sys 
 sys.path.append("..") # for getting out of tests directory
-#from src.aztecdiamond import aztecdiamond
+from src import aztecdiamond
 # l'importation de aztecdiamond failed
-class test_aztect_instance(unittest.TestCase):
+
+class test_aztecdiamond(unittest.TestCase):
     def test_aztec_array(self):
         gda = generate_diamond_array(self)
         self.assertIsInstance(gda.pavage,generate_diamond_array)

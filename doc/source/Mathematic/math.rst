@@ -22,7 +22,7 @@ The domain is assumed to bedrawn on a chess board.  This explains the difference
  
 We got here an example of an aztec diamond with order 4 :
 
-.. image:: ./Mathematic/order4.png
+.. image:: /Mathematic/order4.png
    :align: center
 
 The aztec diamond of order n got $2^{\frac{n(n+1)}{2}}$
@@ -51,13 +51,16 @@ We will see how to randomly generate a tiling by getting a paving of size n from
 
 Cell 2*2 square : 
 
-.. image:: ./Mathematic/cell22.png
+.. image:: /Mathematic/cell22.png
    :align: center
 
+
 -**Destruction** : if the active cell contains two dominoes, they are removed
+
 -**Slip** : if the active cell contains a domino, it is dragged
+ 
 -**Create** :  if the active cell does not contain a domino, we flip a coin
 
-.. image:: ./Mathematic/algo.png
+.. image:: /Mathematic/algo.png
    :align: center
 

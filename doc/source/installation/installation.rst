@@ -21,5 +21,6 @@ Install with package
 
 In order to put the package for Aztec Diamonds, you have to pip in its annaconda command prompt the following line.
 
-.. code:: anacondabash
-    pip install -i https://test.pypi.org/simple/ aztecdiamond==0.0.1
+.. code:: bash
+    
+   $ pip install -i https://test.pypi.org/simple/ aztecdiamond==0.0.1
