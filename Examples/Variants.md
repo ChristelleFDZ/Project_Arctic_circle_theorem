@@ -1,6 +1,6 @@
--------------------
+-----------
 ## <font color="purple"> The arctic circle phenomenon </font>
--------------------
+--------------
 
 These 2 following animations show the successive steps of tiling algorithm for Aztec diamonds of order 10 and then 100.
 

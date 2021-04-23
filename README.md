@@ -5,7 +5,7 @@ Project for HMMA238
 
 ## Synopsis
 
-This project deal with the arctic circle theorem ( or Aztec Diamonds theorem). The picture at the top is the expected end result.
+This project deals with the arctic circle theorem ( or Aztec Diamonds theorem). The picture at the top is the expected end result.
 
 ## Install
 
@@ -32,19 +32,21 @@ $ git clone https://github.com/ChristelleFDZ/Project_Arctic_circle_theorem.git
 The documentation of this package is available on this website: 
 Please read carefully each part you want to exploit in the package.
 
-### Structure
+## Structure
 
 In the *\beamer* folder, you can find a presentation of this work.
 
-The *\report* folder contains a jupyter notebook to resume the entire project.
+The *\report* folder contains a jupyter notebook to resume the he most interesting results we found, showing images/movies of interest.
+
+.
 
 The *\doc* folder contains some documentation about this project.
 
-Tests functions are implemented in the folder in order to assure the good development of this package.
+Tests functions are implemented in the *\tests* folder in order to assure the good development of this package.
 
 The folder *\src* contains all the main code.
 
-### Contributors
+## Contributors
 
 ```
 Sonia Djouahra : sonia.djouahra@etu.umontpellier.fr
