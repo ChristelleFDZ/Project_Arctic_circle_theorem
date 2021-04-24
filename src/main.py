@@ -1,15 +1,20 @@
 from aztecdiamond import AztecDiamond
 
 def main():
-    # Initialize an empty AztecDiamond(1) diamond and draw it
+    """ 
+    Firstly we initialize an empty AztecDiamond(1) diamond and draw it, then we fill the AztecDiamond(1) with a randomly-oriented domino pair
+    and finally we iterate the tiling generation and dessin as it grows.
+
+    """
+    # First step
     diamond = AztecDiamond(order=1)
     diamond.draw()
 
-    # Fill the AztecDiamond(1) with a randomly-oriented domino pair
+    # Second step
     diamond.remplissage_deuxdeux()
     diamond.draw()
 
-    # Then iterate the tiling generation and dessin as it grows
+    #Third step
     while True:
         diamond.etape_pavage(draw=True)
 
