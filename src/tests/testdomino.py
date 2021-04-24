@@ -17,8 +17,3 @@ class TestDomino:
         #test genrect
         assert (d.rect.height,d.rect.left,d.rect.width,d.rect.top) == (133,533,67,600)
  
-
-"""if __name__ == '__main__':
-    t= TestDomino()
-    t.test_gen_rect()
-    #pytest.main()     """
