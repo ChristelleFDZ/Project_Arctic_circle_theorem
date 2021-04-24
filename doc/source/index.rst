@@ -34,11 +34,16 @@ Hope you can find in this package something to satisfy your curiosity !
    Mathematic/math
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Documentation
 
    documentation/aztec
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Gallery
+
+   Gallery/gallery
 
 
 .. toctree::
