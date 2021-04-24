@@ -62,3 +62,10 @@ A review of the course was necessary. We spent some time to redo the practical e
 Throughout the project, we worked together. We had zoom meetings every day.
 During the last weeks, the work was more intensive, indeed we worked together at the library. It was difficult to allocate tasks to each other because the scripts were linked.
 So we made the choice to do everything together. However if it took longer.
+
+For the beamer, we chose the writing in Latex. Indeed overleaf allowed us to work simultaneously. We divided the parts equally as follows:
+
+-  Christelle : Introduction an conclusion
+- Anna : Numerical aspect
+- Omar : Package information
+- Sonia : Mathematical aspect
