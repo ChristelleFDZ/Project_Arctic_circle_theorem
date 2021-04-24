@@ -1,11 +1,11 @@
-from aztecdiamond import aztecdiamond
+from aztecdiamond import AztecDiamond
 
 def main():
-    # Initialize an empty Aztecdiamond(1) diamond and draw it
-    diamond = aztecdiamond(order=1)
+    # Initialize an empty AztecDiamond(1) diamond and draw it
+    diamond = AztecDiamond(order=1)
     diamond.draw()
 
-    # Fill the Aztecdiamond(1) with a randomly-oriented domino pair
+    # Fill the AztecDiamond(1) with a randomly-oriented domino pair
     diamond.remplissage_deuxdeux()
     diamond.draw()
 

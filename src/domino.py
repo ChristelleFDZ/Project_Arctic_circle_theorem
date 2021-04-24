@@ -53,7 +53,7 @@ class Domino:
         
         """
         
-        assert orientation in ORIENTATIONS
+        
         self.angle_droit_h = np.array(angle_droit_h)
         self.orientation = orientation
         self.rect = None
@@ -71,10 +71,10 @@ class Domino:
         if order < 70 :
             self.rect = pygame.Rect(
                 round(TAILLE_Grille * (order + 1 + self.angle_droit_h[1])),  #  haut
-                round(TAILLE_Grille * (order + 1 + self.angle_droit_h[0])),  # droite
-                round(TAILLE_Grille * (2 if self.orientation in (N, S) else 1)),  # poids
-                round(TAILLE_Grille * (1 if self.orientation in (N, S) else 2)),  # largeur
+                round(TAILLE_Grille * (order + 1 + self.angle_droit_h[0])),  # gauche
+                round(TAILLE_Grille * (2 if self.orientation in (N, S) else 1)),  # largeur
+                round(TAILLE_Grille * (1 if self.orientation in (N, S) else 2)),  # hauteur
             )
-
+        
     def step(self):
         self.angle_droit_h += PAVAGE_Etapes[self.orientation]

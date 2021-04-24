@@ -35,7 +35,7 @@ PAVAGE_Etape_conflits = {
     O: E,
 }
 
-class aztecdiamond:
+class AztecDiamond:
     """
     This class will contain the different steps to create the Aztec diamond
 
@@ -43,7 +43,7 @@ class aztecdiamond:
 
     def __init__(self, order, fps=4):
         """ 
-        Creates the variables associated with the class aztecdiamond
+        Creates the variables associated with the class AztecDiamond
         :type order: int 
         :param order: an instance of the class passed to __init__ 
         :type fps: int
@@ -75,6 +75,7 @@ class aztecdiamond:
             np.concatenate([np.flipud(tri), np.transpose(tri)], axis=1),
             np.concatenate([tri, np.fliplr(tri)], axis=1)
         ], axis=0)
+        
         self.pavage = np.zeros([2 * self.order] * 2, dtype='O')
 
 # Cette fonction génère un rectangle en grille pour la production du diamant
@@ -91,6 +92,7 @@ class aztecdiamond:
             )
             for i in range(self.order)
         ]
+        
 # Description des étapes du pavage
     def etape_pavage(self, draw: bool = False):
         """
@@ -126,11 +128,13 @@ class aztecdiamond:
 
         self.production_rect_grille()
         [tile.gen_rect(order=self.order) for tile in self.tiles]
+        
 
     def suppression_oppose(self):
         """
         Removes tiles with opposite directions
         """
+
         for i, j in zip(*np.where(self.diamond)):
             tile = self.pavage[i, j]
             if tile == 0:
@@ -147,6 +151,8 @@ class aztecdiamond:
                 self.tiles.remove(tile)
                 self.tiles.remove(tile2)
 
+
+
     def move_tiles(self):
         """
         Moves tiles in different orientations
@@ -159,7 +165,8 @@ class aztecdiamond:
             self.pavage[tuple(tile.angle_droit_h + self.order
                               + (PAVAGE_Etapes[S] if tile.orientation in (E, O) else PAVAGE_Etapes[E])
                               )] = tile
-
+        
+            
     def remplissage_deuxdeux(self):
         """
         Uses the class Domino to fill in two by two the paving to the top and bottom and to the left and right.
@@ -184,6 +191,7 @@ class aztecdiamond:
                 self.pavage[ii + 1, jj + 1] = tile_b
             self.tiles.append(tile_a)
             self.tiles.append(tile_b)
+
 
     def draw(self):
         """

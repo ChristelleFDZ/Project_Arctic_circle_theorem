@@ -1,26 +1,24 @@
-import unittest
+import pytest
 import numpy as np
-import sys 
+import os,sys,inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0,parentdir) 
+import domino
 from domino import Domino
-sys.path.append("..") # for getting out of tests directory
-#from src.domino import Domino
-#  l'importation de Domino failed
-class testdomino(unittest.TestCase):
-    def test_ifonction_is_instance_of_domino(self): # la fonction __init__
-        d = Domino(angle_droit_h[1],np.array([-1, 0]),1 )
-        self.assertIsInstance(d, Domino)
 
-    def test_domino_rectangle(self):
-        d = gen_rect(1)  # order=1
-        self.assertIsInstance(d,gen_rect)
+class TestDomino:
+    
+    def test_gen_rect(self):
+        """
+        Test the domino with the order 5, the localisation (3,2) and the position west O 
+        """
+        d= Domino((3,2), domino.O, 5)
+        #test genrect
+        assert (d.rect.height,d.rect.left,d.rect.width,d.rect.top) == (133,533,67,600)
+ 
 
-    def test_orientation_is_in_ORIENTATIONS(self):
-        self.assertIn(Domino.orientation, ORIENTATIONS)
-
-#Méthode test : "construction de l'objet" 
-
-if __name__ == '__main__':
-    unittest.main()     
-#Ran 3 tests in 0.001s
-#FAILED (errors=3)
-#Error : No module named 'src'
+"""if __name__ == '__main__':
+    t= TestDomino()
+    t.test_gen_rect()
+    #pytest.main()     """
