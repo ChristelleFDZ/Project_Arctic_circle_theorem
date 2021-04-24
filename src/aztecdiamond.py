@@ -1,5 +1,5 @@
 """
-This program will set up the development process of the Aztec diamond.
+This program will set up the paving process and at the end it will return an Aztec diamond of order 70
 The elaboration of the Diamond respects the Arctic circle theorem and therefore the paving process with dominoes.
 In fact, the execution of the program requires the use of the class Domino.
 """
@@ -45,7 +45,7 @@ class AztecDiamond:
         """ 
         Creates the variables associated with the class AztecDiamond
         :type order: int 
-        :param order: an instance of the class passed to __init__ 
+        :param order: an instance of the class passed to __init__ . It represents the order of the Aztec Diamond
         :type fps: int
         :param fps: an instance of the classpassed to __init__ . The initial value of fps is 4
         """
@@ -68,7 +68,7 @@ class AztecDiamond:
 
     def generate_diamond_array(self):
         """
-        Generates diamond array
+        Generates diamond array 
         """
         tri = np.triu(np.ones([self.order] * 2))
         self.diamond = np.concatenate([
@@ -78,7 +78,7 @@ class AztecDiamond:
         
         self.pavage = np.zeros([2 * self.order] * 2, dtype='O')
 
-# Cette fonction génère un rectangle en grille pour la production du diamant
+# Cette fonction génère une grille avec des réctangles pour la production du diamant
     def production_rect_grille(self):
         """
         Generates a grid with rectangles
@@ -96,8 +96,10 @@ class AztecDiamond:
 # Description des étapes du pavage
     def etape_pavage(self, draw: bool = False):
         """
-        Describes the paving process by following the paving process rule
-        Use 4 different functions : augmentation_taille, suppression_oppose, draw, remplissage_deuxdeux
+        Describes the paving process by following the crazy dance or the iterating shuffling.
+        There are 4 different steps: first, the increase of the Diamond size, then, the 
+        removal of opposing tiles,followed by te moving tiles and finally,the filling by two dominoes. 
+        This function uses 4 different functions : augmentation_taille, suppression_oppose, draw, remplissage_deuxdeux
         :type draw: bool
         :param order: the default value of draw is False
         """
@@ -111,14 +113,14 @@ class AztecDiamond:
         self.move_tiles()
         if draw:
             self.draw()
-        self.remplissage_deuxdeux() # remplir 2 par 2 (le diamant est symétrique)
+        self.remplissage_deuxdeux() # remplir 2 par 2 
         if draw:
             self.draw()
 # 
     def augmentation_taille(self): 
         """
         Increases the size of the Diamond
-        At each iteration, the order increase by one
+        At each iteration, the order increases by one
         """
         self.order += 1
 
@@ -132,7 +134,7 @@ class AztecDiamond:
 
     def suppression_oppose(self):
         """
-        Removes tiles with opposite directions
+        Removes tiles with opposite directions or orientations
         """
 
         for i, j in zip(*np.where(self.diamond)):
@@ -155,7 +157,7 @@ class AztecDiamond:
 
     def move_tiles(self):
         """
-        Moves tiles in different orientations
+        Moves tiles in the right direction from the center to the corners
         """
         self.pavage = np.zeros([2 * self.order] * 2, dtype='O')
         for tile in self.tiles:
@@ -169,7 +171,8 @@ class AztecDiamond:
             
     def remplissage_deuxdeux(self):
         """
-        Uses the class Domino to fill in two by two the paving to the top and bottom and to the left and right.
+        Fills the Aztecdiamond(n=order) with a randomly-oriented pair of dominoes.
+        They can be oriented either East and West or North and South
         """
         while np.any((self.pavage == 0) & (self.diamond == 1)):
             ii, jj = [i[0] for i in np.where((self.pavage == 0) & (self.diamond == 1))]
@@ -195,7 +198,7 @@ class AztecDiamond:
 
     def draw(self):
         """
-        This function allows you to create the animation thanks to 5 functions:
+        This function allows you to create the animation thanks to the package pygame and 5 functions:
         gerer_evenements, ecran_vide,  dessin_grille, dessin_tuiles and dessin_commentaire
         """
         self.gerer_evenements() 
@@ -222,7 +225,7 @@ class AztecDiamond:
 
     def dessin_grille(self):
         """
-        Draws grids
+        Draws grids thanks to the pygame package
         """
     
         [
@@ -250,7 +253,7 @@ class AztecDiamond:
         
     def dessin_tuiles(self):
         """
-        This function draws tiles : the shape is rectangular and the color can be blue,red,yellow or green accroding to the place and the direction of the tile
+        This function draws tiles : the shape is rectangular and the color can be blue, red ,yellow or green accroding to the place and the direction of the tile
 
         """
         for tile in self.tiles:

@@ -1,5 +1,5 @@
 """
-This program will set up the paving process with dominoes
+This program will create different dominoes. In fact there are 4 type of dominoes.
 
 """
 import numpy as np
@@ -35,8 +35,8 @@ PAVAGE_Etape_conflits = {
 
 class Domino:
     """
-    This class will contain the different steps for the tiling
-
+    This class will contain the steps to create different dominoes according to their orientations: East(E),West(O),North(N),South(S)
+    It will be used in the aztecdiamond program (Class aztecdiamond). 
     """
     #version ='0.1'
     def __init__(self, angle_droit_h, orientation, order=None):
@@ -46,11 +46,14 @@ class Domino:
         :param angle_droit_h: an instance of the class passed to __init__
 
         :type orientation: array # for example: North(N): np.array([-1, 0])
-        :param orientation: The direction of the domino
+        :param orientation: The direction of the domino, it can be East(E),West(O),North(N),South(S)
 
         :type order: int 
-        :param order: an instance of the class passed to __init__ ; The default value of order is None
+        :param order: an instance of the class passed to __init__ ; The default value of order is None ;
+                        As its name shows, this instance represents the order of our Aztec Diamond.In our 
+                        program,the order goes from 1 to 70.
         
+                        
         """
         
         
