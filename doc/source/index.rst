@@ -26,13 +26,32 @@ Hope you can find in this package something to satisfy your curiosity !
 
    installation/installation
 
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Mathematics 
+
+   Mathematic/math
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Documentation
+
+   documentation/aztec
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Gallery
+
+   Gallery/gallery
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Sources and contacts :
 
    install/sources
    install/contact
-
 
 
 
