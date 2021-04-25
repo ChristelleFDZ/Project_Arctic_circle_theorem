@@ -8,27 +8,38 @@ Project for HMMA238
 link : https://youtu.be/DYxvR-i5mk0
 ## Synopsis
 
-This project deals with the arctic circle theorem ( or Aztec Diamonds theorem). The picture at the top is the expected end result.
+This project deals with the arctic circle theorem ( or Aztec Diamonds theorem). The picture at the top is an example of the expected result.
 
 ## Install
 
-First, you have to check that all python packages in the  **requirements.txt** file are installed in the correct version. To make sure if every dependencies are installed in the right version you can simply run in a prompt:
+In order to retrieve this project you shall clone this repository; using the command below (make sure to use it in a command prompt) :
+
+```
+$ git clone https://github.com/ChristelleFDZ/projectarcticcircletheorem.git
+```
+
+To setup the project correctly, you have to install all the required python packages described in the  **requirements.txt**, all those packages are specified using a specific version. In order to comply with the requirements, please use the command below (execute this command in the same directory), this command shall install all expected packages:
 
 ```
 pip install -r requirements.txt
 ```
 
-In order to install the package for Aztec Diamonds, you have to run in its command prompt the following line.
+(OPTIONALLY) More over you can install this project on your python package filesystem in order to use all functions and class provided by this project in your own projects.
+Using the command below (make sure to use the correct pip installer if you have multiple python versions on your device):
 
 ```
-pip install -i https://test.pypi.org/simple/ aztecdiamond==0.0.1
+pip install -i https://test.pypi.org/simple/ aztecdiamond==1.0.2
+```
+Warning : this project is not currently optimized for packaging use (It seems that imports are conflicting).
+
+## Run (the cloned project)
+
+In order to run this python project, you must execute the main.py script. This will run the application. (Make sure to be in the correct directory)
+
+```
+python main.py
 ```
 
-We recommend to clone the entire folder and them install it (git must be functional on your computer)
-
-```
-$ git clone https://github.com/ChristelleFDZ/projectarcticcircletheorem.git
-```
 
 ## Documentation
 
@@ -41,9 +52,9 @@ In the *\beamer* folder, you can find a presentation of this work.
 
 The *\doc* folder contains some documentation about this project.
 
-Tests functions are implemented in the *\tests* folder in order to assure the good development of this package.
+Tests functions are implemented in the *\tests* folder in order to ensure the good development of this package.
 
-The folder *\src* contains all the main code.
+The folder *\aztecdiamond* contains all the main code.
 
 ## Contributors
 
