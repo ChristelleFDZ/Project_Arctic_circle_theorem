@@ -28,7 +28,10 @@ We are going to tile our Aztec diamond using dominoes. The rules of the paving a
 - and finally, don't come out of the figure.
 
 There are a very large number of possible ways to place them. Indeed, for an Aztec Diamond of order n, there are 
-.. image:: https://render.githubusercontent.com/render/math?math=2%5E%7Bn(n%2B1)/2%7D several tilings.
+
+.. image:: https://render.githubusercontent.com/render/math?math=2%5E%7Bn(n%2B1)/2%7D 
+   
+several tilings.
 
 To represent different pavings, we will use a color convention that allows to distingue 4 possibilities of placement for a domino. 
 
