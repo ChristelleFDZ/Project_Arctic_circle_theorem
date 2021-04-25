@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
   name='aztecdiamond',
-  version="1.0.1",
+  version="1.0.2",
   description='Aztec Diamond theorem',
   url='https://github.com/ChristelleFDZ/projectarcticcircletheorem.git',
   author='Djouahra Sonia; Es-Sbai Omar; Sow Oumouratou Anna; Fernandez Christelle',
