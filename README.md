@@ -36,10 +36,6 @@ Please read carefully each part you want to exploit in the package.
 
 In the *\beamer* folder, you can find a presentation of this work.
 
-The *\report* folder contains a jupyter notebook to resume the he most interesting results we found, showing images/movies of interest.
-
-.
-
 The *\doc* folder contains some documentation about this project.
 
 Tests functions are implemented in the *\tests* folder in order to assure the good development of this package.
