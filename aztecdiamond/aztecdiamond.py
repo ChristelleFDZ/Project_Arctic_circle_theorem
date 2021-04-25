@@ -6,7 +6,8 @@ In fact, the execution of the program requires the use of the class Domino. It w
 # On importe les modules random, numpy, pygame et notre classe domino pour pouvoir les utiliser dans notre code
 import random
 import numpy as np
-import pygame 
+import pygame
+from domino import Domino
 
 
 #definition des couleurs et orientation 
