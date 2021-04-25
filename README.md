@@ -29,7 +29,7 @@ $ git clone https://github.com/ChristelleFDZ/projectarcticcircletheorem.git
 
 ## Documentation
 
-The documentation of this package is available on this website: https://project-arctic-circle-theorem-3.readthedocs.io/en/latest/documentation/aztec.html
+The documentation of this package is available on this website: https://project-arctic-circle-theorem-3.readthedocs.io/en/latest/index.html
 Please read carefully each part you want to exploit in the package.
 
 ## Structure
