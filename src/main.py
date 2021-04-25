@@ -2,6 +2,7 @@ from aztecdiamond import AztecDiamond
 
 def main():
     """ 
+    Is the point of execution our program
     Firstly we initialize an empty AztecDiamond(1) diamond and draw it, then we fill the AztecDiamond(1) with a randomly-oriented domino pair
     and finally we iterate the tiling generation and dessin as it grows.
 

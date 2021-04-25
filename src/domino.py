@@ -68,6 +68,7 @@ class Domino:
         """
         Generates rectangles for the tiling
         In fact, dominoes have rectangular shape
+        Uses pygame object for storing rectangular coordinates :pygame.Rect
 
         """
         TAILLE_Grille = AFFICHAGE_Taille / 2 / (order + 1) 
@@ -80,4 +81,7 @@ class Domino:
             )
         
     def step(self):
+        """
+        Adds the new step of the paving at each iteration
+        """
         self.angle_droit_h += PAVAGE_Etapes[self.orientation]

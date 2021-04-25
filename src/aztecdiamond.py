@@ -1,7 +1,7 @@
 """
 This program will set up the paving process and at the end it will return an Aztec diamond of order 70
-The elaboration of the Diamond respects the Arctic circle theorem and therefore the paving process with dominoes.
-In fact, the execution of the program requires the use of the class Domino.
+The elaboration of the Diamond respects the paving process with dominoes : The square dance or crazy dance.
+In fact, the execution of the program requires the use of the class Domino. It will use the pygame package a lot.
 """
 # On importe les modules random, numpy, pygame et notre classe domino pour pouvoir les utiliser dans notre code
 import random
@@ -48,6 +48,13 @@ class AztecDiamond:
         :param order: an instance of the class passed to __init__ . It represents the order of the Aztec Diamond
         :type fps: int
         :param fps: an instance of the classpassed to __init__ . The initial value of fps is 4
+
+        Uses pygame.init() to initialise all of the pygame modules. Without this the modules would not work
+        The WIDTH and HEIGHT constants are used to create a window, which would have a width of 800 pixels 
+            and a height of 800 pixels. The function used in SCREEN, pygame.display.set_mode((AFFICHAGE_Taille, AFFICHAGE_Taille)), 
+            will set the mode of the display and return a Surface object. Note how the parameters for this 
+            function are the WIDTH and HEIGHT constants defined earlier.
+
         """
         assert type(order) is int and order > 0
         self.order = order
@@ -82,6 +89,7 @@ class AztecDiamond:
     def production_rect_grille(self):
         """
         Generates a grid with rectangles
+        Uses pygame object for storing rectangular coordinates :pygame.Rect
         """
         self.grille_rects = [
             pygame.Rect(
@@ -96,10 +104,11 @@ class AztecDiamond:
 # Description des étapes du pavage
     def etape_pavage(self, draw: bool = False):
         """
-        Describes the paving process by following the crazy dance or the iterating shuffling.
+        Describes the paving process by following the crazy dance or square dance or the iterating shuffling.
         There are 4 different steps: first, the increase of the Diamond size, then, the 
         removal of opposing tiles,followed by te moving tiles and finally,the filling by two dominoes. 
         This function uses 4 different functions : augmentation_taille, suppression_oppose, draw, remplissage_deuxdeux
+
         :type draw: bool
         :param order: the default value of draw is False
         """
@@ -171,7 +180,7 @@ class AztecDiamond:
             
     def remplissage_deuxdeux(self):
         """
-        Fills the Aztecdiamond(n=order) with a randomly-oriented pair of dominoes.
+        Fills the Aztecdiamond(n=order) with a randomly-oriented pairs of dominoes.
         They can be oriented either East and West or North and South
         """
         while np.any((self.pavage == 0) & (self.diamond == 1)):
@@ -200,6 +209,10 @@ class AztecDiamond:
         """
         This function allows you to create the animation thanks to the package pygame and 5 functions:
         gerer_evenements, ecran_vide,  dessin_grille, dessin_tuiles and dessin_commentaire
+        Uses the pygame module to control the display window and screen : pygame.display.flip. In fact,
+                This basically makes everything we have drawn on the screen Surface become visible and 
+                updates the contents of the entire display. Without this line, the user wouldn't see 
+                anything on their pygame screen.
         """
         self.gerer_evenements() 
         self.ecran_vide()
@@ -209,11 +222,20 @@ class AztecDiamond:
         pygame.display.flip()
 
     def gerer_evenements(self):
+        """
+        Manages events thanks to the package pygame
+        Uses the pygame module for monitoring time
+        Gets the time in milliseconds thanks to clock.tic
+        Gets the events from the queue thanks to pygame.event.get
+        uninitializes all pygame modules thanks to pygame.quit: in fact This will make it so 
+                            that when the user presses the exit button in the top corner, the 
+                            event with the type pygame.QUIT occurs
+        """
         if self.fps is not None:
             self.clock.tick(self.fps)
-        for event in pygame.event.get(): # utilisée pour la gestion des touches au clavier
+        for event in pygame.event.get(): 
             if event.type == pygame.QUIT:
-                pygame.quit() #initialize all pygame modules
+                pygame.quit() #uninitializes all pygame modules
                 quit()
 
     def ecran_vide(self):
@@ -226,6 +248,8 @@ class AztecDiamond:
     def dessin_grille(self):
         """
         Draws grids thanks to the pygame package
+        Uses pygame module for drawing rectangular shape : pygame.draw.rect()
+        Uses pygame module to draw a straight line : pygame.draw.line()
         """
     
         [
@@ -254,7 +278,7 @@ class AztecDiamond:
     def dessin_tuiles(self):
         """
         This function draws tiles : the shape is rectangular and the color can be blue, red ,yellow or green accroding to the place and the direction of the tile
-
+        Uses pygame module for drawing rectangular shape and add a color : pygame.draw.rect()
         """
         for tile in self.tiles:
             pygame.draw.rect(self.screen, rect=tile.rect, color=PAVAGE_Couleur[tile.orientation])
@@ -263,7 +287,7 @@ class AztecDiamond:
 
     def dessin_commentaire(self):
         """
-        Allows you to display comments in the visualization 
+        Allows you to display comments in the visualization more precisely the title AztecDiamond
         """
 
         label = self.font.render(f'AztecDiamond (n = {self.order})', True, PAVAGE_Couleur[None])
