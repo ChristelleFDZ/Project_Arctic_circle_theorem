@@ -7,7 +7,7 @@ In fact, the execution of the program requires the use of the class Domino. It w
 import random
 import numpy as np
 import pygame 
-from domino import Domino
+
 
 #definition des couleurs et orientation 
 AFFICHAGE_Taille = 800 
