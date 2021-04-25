@@ -15,7 +15,7 @@ First, you have to check that all python packages in the  **requirements.txt** f
 pip install -r requirements.txt
 ```
 
-In order to put the package for Aztec Diamonds, you have to run in its command prompt the following line.
+In order to install the package for Aztec Diamonds, you have to run in its command prompt the following line.
 
 ```
 pip install -i https://test.pypi.org/simple/ aztecdiamond==0.0.1
