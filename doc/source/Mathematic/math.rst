@@ -25,7 +25,9 @@ We got here an example of an aztec diamond with order 4 :
 .. image:: /Mathematic/order4.png
    :align: center
 
-The aztec diamond of order n got :math:'2^{\frac{n(n+1)}{2}}'
+The aztec diamond of order n got :
+
+.. image:: /Mathematic/2puissance.png
 
 A domino tiling is a complicated mathematical object.  We would like to encode it into a simpler one. The height function is defined by a local rule:  around a black square, turning counterclockwise, 
 it increases by 1 along every edge, except when crossing a domino (in which case it decreases by 3).
