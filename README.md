@@ -3,6 +3,9 @@ Project for HMMA238
 
 ![Aztec Diamonds](http://images.math.cnrs.fr/local/cache-vignettes/L350xH350/arton214-edc85.png?1605705109)
 
+## Youtube presentation
+
+link : https://youtu.be/DYxvR-i5mk0
 ## Synopsis
 
 This project deals with the arctic circle theorem ( or Aztec Diamonds theorem). The picture at the top is the expected end result.
