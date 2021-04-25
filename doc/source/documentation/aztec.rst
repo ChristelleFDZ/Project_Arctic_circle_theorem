@@ -74,8 +74,8 @@ This Theorem says that if we push all off it in infinity, we get a picture with 
 The class toset up the shuffling dominoes to create the arctic circle :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. autoclass:: src.aztecdiamond.aztecdiamond
-    :members: __init__ , generate_diamond_array , production_rect_grille, etape_pavage , augmentation_taille , suppression_oppose , move_tiles , remplissage_deuxdeux , draw , ecran_vide , dessin_grille , dessin_tuiles , dessin_commentaire
+.. autoclass:: src.aztecdiamond.AztecDiamond
+    :members:  generate_diamond_array , production_rect_grille, etape_pavage , augmentation_taille , suppression_oppose , move_tiles , remplissage_deuxdeux , ecran_vide , dessin_grille , dessin_tuiles , dessin_commentaire
 
 
 .. image:: https://user-images.githubusercontent.com/78490299/112158817-d3fa4580-8be8-11eb-9dc5-036e8558cc52.png
